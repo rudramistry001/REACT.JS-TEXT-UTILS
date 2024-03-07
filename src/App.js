@@ -1,7 +1,4 @@
-
-
 import './App.css';
-import ContactForm from './components/ContactForm';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 
@@ -14,7 +11,7 @@ function App() {
 
 <div className="container">
 <TextForm heading = "Enter the text to analyse"></TextForm>
-<ContactForm></ContactForm>
+
 </div>
     </>
   );

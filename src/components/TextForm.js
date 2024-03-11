@@ -8,6 +8,15 @@ export default function TextForm(props) {
     setText(newText);
   };
 
+  const handleButtonClickLow = () => {
+    let newText = text.toLowerCase();
+    setText(newText);
+  };
+
+  const handleButtonClickClr = () => {
+    let newText = '';
+    setText(newText);
+  };
   // Function to count words in the text
   const countWords = () => {
     // Split text by whitespace characters (\s+)
@@ -34,10 +43,24 @@ export default function TextForm(props) {
             ></textarea>
           </div>
           <button
-            className="btn btn-primary"
+            className="btn btn-primary mx-2"
             onClick={handleButtonClick}
           >
             Convert to Uppercase
+          </button>
+
+          <button
+            className="btn btn-primary mx-2 "
+            onClick={handleButtonClickLow}
+          >
+            Convert to LowerCase
+          </button>
+
+          <button
+            className="btn btn-primary mx-2"
+            onClick={handleButtonClickClr}
+          >
+            Clear Text
           </button>
         </div>
       </div>
@@ -45,6 +68,9 @@ export default function TextForm(props) {
         <h1>Your Text Summary</h1>
         <p>{countWords()} words</p>
         <p>{text.length} characters</p>
+        <p> This text will take {countWords() * 0.008} miniutes to read out once.</p>
+        <h2>Preview</h2>
+        <p>{text}</p>
       </div>
     </>
   );
